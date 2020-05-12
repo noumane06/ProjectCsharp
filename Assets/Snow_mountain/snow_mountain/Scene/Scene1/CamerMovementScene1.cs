@@ -23,6 +23,10 @@ public class CamerMovementScene1 : MonoBehaviour
                 transform.position = pos; // applying the new position 
             
         }
+        if (timer > 10)
+        {
+            GameObject.FindGameObjectWithTag("Music").GetComponent<MusicScript>().StopMusic();
+        }
 
     }
 }

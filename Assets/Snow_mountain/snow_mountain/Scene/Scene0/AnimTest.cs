@@ -7,7 +7,11 @@ public class AnimTest : MonoBehaviour
 {
     // Start is called before the first frame update
     public float timer = 0f;
-    
+
+    void Start()
+    {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicScript>().PlayMusic();
+    }
     void Update()
     {
             timer += Time.deltaTime;
