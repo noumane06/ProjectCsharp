@@ -11,6 +11,7 @@ public class AnimTest : MonoBehaviour
     void Start()
     {
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicScript>().PlayMusic();
+        GameObject.FindGameObjectWithTag("wind").GetComponent<MusicScript>().PlayMusic();
     }
     void Update()
     {

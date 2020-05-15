@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CamerMovementScene1 : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class CamerMovementScene1 : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer <= 10)
+        if (timer <= 5)
         {
 
                 Vector3 pos = transform.position; // getting the position of the camera
@@ -23,9 +24,9 @@ public class CamerMovementScene1 : MonoBehaviour
                 transform.position = pos; // applying the new position 
             
         }
-        if (timer > 10)
+        if (timer > 5)
         {
-            GameObject.FindGameObjectWithTag("Music").GetComponent<MusicScript>().StopMusic();
+            SceneManager.LoadScene(2);
         }
 
     }
