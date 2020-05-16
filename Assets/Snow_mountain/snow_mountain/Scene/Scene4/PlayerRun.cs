@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class PlayerRun : MonoBehaviour
 {
-    public Animator animatior;
-    public float speed;
-    public Vector3 position; 
-    public float InputY;
+    public Animator Animator;
+    
+    public float gravity = 20.0f;
+
+    public Vector3 moveDirection = Vector3.zero;
+    public CharacterController controller;
+    private readonly float speed = 6.0f;
+    private float InputY;
     // Start is called before the first frame update
     void Start()
     {
         // getting the animator 
-        animatior = this.gameObject.GetComponent<Animator>();
+       // Animator = this.gameObject.GetComponent<Animator>();
+        // getting the controller 
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        InputY = Input.GetAxis("Vertical");
-        animatior.SetFloat("InputY", InputY);
+        /*InputY = Input.GetAxis("Vertical");
+        Animator.SetFloat("InputY", InputY);
         if (InputY == 1 )
-        {
-            position = transform.position;
-            position.z += InputY * speed ;
-            transform.position =  position;
-        }
-        // 83.32 -10.44 6
+        {*/
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.SimpleMove(moveDirection * Time.deltaTime);
+
+        //}
+        
     }
 }

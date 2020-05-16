@@ -741,10 +741,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582851aad8b3f57449248f67e0db0d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatior: {fileID: 1415718982}
-  speed: 0.1
-  position: {x: 0, y: 0, z: 0}
-  InputY: 0
+  Animator: {fileID: 0}
+  gravity: 20
+  moveDirection: {x: 0, y: 0, z: 0}
+  controller: {fileID: 0}
 --- !u!95 &1415718982
 Animator:
   serializedVersion: 3
@@ -764,6 +764,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!143 &1415718983
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415718979}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1468862930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -950,7 +968,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 44ffb78f2d06a494aa67a13856b78593,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.44
+      value: -10.78
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 44ffb78f2d06a494aa67a13856b78593,
         type: 3}
